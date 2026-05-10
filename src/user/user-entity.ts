@@ -15,6 +15,8 @@ export class UserEntity {
   @Column({ select: false })
   password: string;
 
-  @OneToMany(() => TaskEntity, (task) => task.user)
+  @OneToMany(() => TaskEntity, (task) => task.user, {
+    onDelete: 'CASCADE',
+  })
   tasks: TaskEntity[];
 }

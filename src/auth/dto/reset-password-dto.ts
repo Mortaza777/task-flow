@@ -4,12 +4,12 @@ import { IsNotEmpty, MinLength } from 'class-validator';
 @Injectable()
 export class resetPasswordDto {
   @IsNotEmpty()
-  token!: string;
+  token: string;
 
   @IsNotEmpty()
   @MinLength(8)
-  newpassword!: string;
+  newpassword: string;
 
   @IsNotEmpty()
-  confirmPassword!: string;
+  confirmPassword: string;
 }

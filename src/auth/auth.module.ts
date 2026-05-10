@@ -7,13 +7,14 @@ import { JwtModule } from '@nestjs/jwt';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './stratigies/jwt-strategy';
+import { TaskEntity } from 'src/task/entities/task-entity';
 
 @Module({
   providers: [AuthService, JwtStrategy],
   controllers: [AuthController],
   imports: [
     PassportModule,
-    TypeOrmModule.forFeature([UserEntity]),
+    TypeOrmModule.forFeature([UserEntity, TaskEntity]),
     JwtModule.register({
       secret: 'mySecretKey',
       signOptions: {

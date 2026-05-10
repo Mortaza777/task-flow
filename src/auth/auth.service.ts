@@ -16,12 +16,15 @@ import { forgerPasswordDto } from './dto/forger-password-dto';
 import { resetPasswordDto } from './dto/reset-password-dto';
 import { MailerService } from '@nestjs-modules/mailer';
 import { LoginDto } from './login-dto';
+import { TaskEntity } from 'src/task/entities/task-entity';
 
 @Injectable()
 export class AuthService {
   constructor(
     @InjectRepository(UserEntity)
     private UserRepository: Repository<UserEntity>,
+    @InjectRepository(TaskEntity)
+    private TaskRepository: Repository<TaskEntity>,
     private JwtService: JwtService,
     private mailerService: MailerService,
   ) {}
@@ -84,15 +87,10 @@ export class AuthService {
 
     const resetLink = `http://localhost:3000/reset-password?token=${resetToken}`;
 
-    await this.mailerService.sendMail({
-      to: user.email,
-      subject: 'Reset Your Password',
-      html: `
-        <h2>Password Reset</h2>
-        <p>Click the bolow to reset your password:</p>
-        <a href="${resetLink}">${resetLink}</a>
-      `,
-    });
+    return {
+      message: 'Rest token create successfully',
+      resetToken,
+    };
 
     return {
       message: 'Reset token created successfully',
@@ -132,6 +130,18 @@ export class AuthService {
 
     return {
       message: 'Password reset successfully',
+    };
+  }
+
+  async deleteAccount(userId: number) {
+    await this.TaskRepository.delete({
+      id: userId,
+    });
+
+    await this.UserRepository.delete(userId);
+
+    return {
+      message: 'Account delete successfully',
     };
   }
 }
