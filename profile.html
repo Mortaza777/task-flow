@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow - Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span class="status-time" id="live-time"></span>
+      <div class="status-icons"></div>
+    </div>
+
+    <div class="app-title">TaskFlow</div>
+
+    <!-- Scrollable content -->
+    <div class="content">
+
+      <!-- Avatar -->
+      <div class="avatar-section">
+        <div class="avatar-ring">
+          <div class="avatar-inner" id="avatar-initials">?</div>
+        </div>
+        <div class="profile-name" id="profile-name">User</div>
+        <div class="profile-email" id="profile-email">user@email.com</div>
+      </div>
+
+      <!-- Logout -->
+      <button class="logout-btn" onclick="document.getElementById('logout-modal').classList.add('show')">
+        <svg viewBox="0 0 24 24">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+          <polyline points="16 17 21 12 16 7" />
+          <line x1="21" y1="12" x2="9" y2="12" />
+        </svg>
+        Log Out
+      </button>
+
+      <!-- Delete Account -->
+      <button class="delete-btn" onclick="document.getElementById('delete-modal').classList.add('show')">
+        <svg viewBox="0 0 24 24">
+          <polyline points="3 6 5 6 21 6" />
+          <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+          <path d="M10 11v6" />
+          <path d="M14 11v6" />
+          <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+        </svg>
+        Delete Account
+      </button>
+
+    </div>
+
+    <!-- Bottom Nav -->
+    <div class="bottom-bar">
+      <div class="nav-icon" onclick="window.location.href='dashboard.html'">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="7" width="20" height="14" rx="2" />
+          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+          <path d="M2 12h20" />
+        </svg>
+      </div>
+      <div class="fab" onclick="window.location.href= 'upload-task.html'">
+        <svg viewBox="0 0 24 24">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
+        </svg>
+      </div>
+      <div class="nav-icon active">
+        <!-- People icon (two figures) -->
+        <svg viewBox="0 0 24 24">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div class="modal-overlay" id="logout-modal" onclick="if(event.target===this)this.classList.remove('show')">
+      <div class="modal">
+        <div class="modal-handle"></div>
+        <div class="modal-title">Log Out</div>
+        <div class="modal-sub">Are you sure you want to log out of your account?</div>
+        <div class="modal-actions">
+          <button class="modal-cancel"
+            onclick="document.getElementById('logout-modal').classList.remove('show')">Cancel</button>
+          <button class="modal-confirm" id="log-out">Log Out</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Account Modal -->
+    <div class="modal-overlay" id="delete-modal" onclick="if(event.target===this)this.classList.remove('show')">
+      <div class="modal">
+        <div class="modal-handle"></div>
+        <div class="modal-title">Delete Account</div>
+        <div class="modal-sub">This action is permanent and cannot be undone.</div>
+        <div class="delete-warning">
+          <svg viewBox="0 0 24 24">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <p>All your tasks and data will be permanently deleted. You will not be able to recover your account.</p>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-cancel"
+            onclick="document.getElementById('delete-modal').classList.remove('show')">Cancel</button>
+          <button class="modal-confirm" id="delete-account">Delete</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="profile.js"></script>
+
+</body>
+
+</html>

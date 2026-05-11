@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow - New Task</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="upload-task.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span class="status-time" id="live-time"></span>
+      <div class="status-icons">
+       
+        
+        
+      </div>
+    </div>
+
+    <!-- App name -->
+    <div class="app-label">TaskFlow</div>
+
+    <!-- Top bar -->
+    <div class="topbar">
+      <div class="back-btn" onclick="window.location.href='dashboard.html'">
+        <svg viewBox="0 0 24 24">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </div>
+      <span class="page-title">New Task</span>
+    </div>
+
+    <!-- Form -->
+    <div class="form-body">
+
+      <!-- Task name -->
+      <input class="input-field" type="text" placeholder="Task name" id="task-name" />
+
+      <!-- Description -->
+      <textarea class="input-field" placeholder="Description" id="task-desc"></textarea>
+
+      <!-- Date -->
+      <div class="input-row">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+        <input type="date" id="task-date" />
+      </div>
+
+      <!-- Time -->
+      <div class="input-row">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12 6 12 12 16 14" />
+        </svg>
+        <input type="time" id="task-time" />
+      </div>
+
+    </div>
+
+    <!-- Submit -->
+    <div class="footer">
+      <button class="submit-btn" onclick="submitTask()">Save</button>
+    </div>
+
+  </div>
+
+  <script src="upload-task.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 420px;
+  height: 690px;
+  background: linear-gradient(to bottom, #02152d, #010d1c);
+  border-radius: 35px;
+  padding: 35px 28px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.taskflow {
+  font-size: 56px;
+  font-weight: bold;
+  color: white;
+}
+
+.taskflow span {
+  color: #3b82f6;
+}
+
+.header p {
+  color: #d1d5db;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: -5px;
+}
+
+.inpots {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.inpots input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0 18px;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+.inpots input::placeholder {
+  color: #9ca3af;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.remember p {
+  color: #d1d5db;
+  font-size: 15px;
+}
+
+.remember input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.forget {
+  margin-top: 12px;
+}
+
+.forget a {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 95px;
+}
+
+.button button {
+  width: 210px;
+  height: 50px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #c026d3, #22d3ee);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button button:hover {
+  transform: scale(1.03);
+}

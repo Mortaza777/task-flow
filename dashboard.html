@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span class="status-time" id="live-time"></span>
+      <div class="status-icons">
+        <!-- Signal -->
+       
+        <!-- Wifi -->
+       
+        <!-- Battery -->
+        
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+      <div class="app-title">TaskFlow</div>
+      <div class="greeting-row">
+        <p class="greeting" id="username"></p>
+        <div class="scan-btn">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="3" />
+            <circle cx="12" cy="12" r="9" />
+            <line x1="12" y1="3" x2="12" y2="1" />
+            <line x1="12" y1="23" x2="12" y2="21" />
+            <line x1="3" y1="12" x2="1" y2="12" />
+            <line x1="23" y1="12" x2="21" y2="12" />
+          </svg>
+        </div>
+      </div>
+      <div class="date" id="current-date"></div>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Task List -->
+    <div class="task-list">
+      <div class="empty-card">No tasks yet</div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-bar">
+      <div class="nav-icon active">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="7" width="20" height="14" rx="2" />
+          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+          <path d="M2 12h20" />
+        </svg>
+      </div>
+      
+      <div class="fab" id="addBtn">
+        <svg viewBox="0 0 24 24">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
+        </svg>
+      </div>
+    
+      <div class="nav-icon" onclick="window.location.href='profile.html'">
+        <svg viewBox="0 0 24 24">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="dashboard.js"></script>
+
+</body>
+
+</html>
